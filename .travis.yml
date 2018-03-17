@@ -8,7 +8,8 @@ services:
 
 before_install:
   - docker login --username $DOCKER_USER --password $DOCKER_PASSWORD $DOCKER_REGISTRY
-  - export IMAGE_NAME=$DOCKER_REGISTRY/byjg/skipdemo:TRAVIS_COMMIT
+  - export IMAGE_NAME=$DOCKER_REGISTRY/byjg/skipdemo:$TRAVIS_COMMIT
+  - echo $IMAGE_NAME
 
 script:
   - docker build . -t $IMAGE_NAME

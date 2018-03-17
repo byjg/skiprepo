@@ -8,6 +8,8 @@ there is no necessary a full solution for a Proof of Concept
 
 ## Specific changes
 
+[![Build Status](https://travis-ci.org/byjg/skiprepo.svg?branch=master)](https://travis-ci.org/byjg/skiprepo)
+
 This project adds a Dockerfile and the .travis.yml necessary for build the project using the CI platform
 
 
