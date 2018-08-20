@@ -6,5 +6,7 @@ node {
             sh 'mvn clean install'
         }
     }
+    
+    stash name: 'hello-world', includes: 'target/*.war'
 }
 
