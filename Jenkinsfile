@@ -6,7 +6,8 @@ node {
     stage("Building with Docker") {
         def arguments = [
             '-e APP=DEV',
-            '-v $HOME/.m2:/root/.m2'
+            // '-v $HOME/.m2:/root/.m2'
+            '-v /tmp/jenkins-build/.m2:/root/.m2'
         ].join(" ")
         docker.withServer('tcp://127.0.0.1:2375') {
             docker.image('maven:3.3-jdk-8').withRun(arguments) {c -> 
