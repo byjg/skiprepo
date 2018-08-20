@@ -17,7 +17,8 @@ node {
     }
 
     stage("Creating Docker Image") {
-        def testImage = docker.build("demojenkins:${env.BUILD_ID}", "./Dockerfile.jenkinsfile")
+        def dockerfile = 'Dockerfile.jenkinsfile'
+        def testImage = docker.build("demojenkins:${env.BUILD_ID}", "-f .")
     }
 }
 
