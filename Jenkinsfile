@@ -4,12 +4,12 @@ node {
     }
 
     stage("Building with Docker") {
-        String[] arguments = [
+        def arguments = [
             '-e APP=DEV',
             '-v $HOME/.m2:/root/.m2'
-        ]
+        ].join(" ")
         docker.withServer('tcp://127.0.0.1:2375') {
-            docker.image('maven:3.3-jdk-8').withRun(arguments.join(" ") {c -> 
+            docker.image('maven:3.3-jdk-8').withRun(arguments) {c -> 
                 sh 'mvn clean package'
             }
         }
