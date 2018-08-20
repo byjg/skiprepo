@@ -1,5 +1,5 @@
 FROM jetty:latest
-COPY target/hello-world-war-1.0.0/* /var/lib/jetty/webapps/ROOT
+COPY target/hello-world-war-1.0.0/* /var/lib/jetty/webapps/ROOT/
 CMD ["java","-jar","/usr/local/jetty/start.jar"]
 
 
