@@ -6,12 +6,6 @@ pipeline {
 
     stages {
 
-        stage("Checkout SCM") {
-            steps {
-                checkout scm
-            }
-        }
-
         stage("Building with Docker") {
             steps {
                 script {
